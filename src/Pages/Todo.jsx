@@ -41,18 +41,22 @@ export const Todo = () => {
     console.log(localStorage.getItem("todos"));
   }, []);
   return (
-    <div className="">
-      <TodoInput handleAdd={handleAdd} />
-      {todos &&
-        todos?.map((el) => (
-          <TodoList
-            key={el.id}
-            {...el}
-            handleStatus={handleStatus}
-            handleTitle={handleTitle}
-            handleDelete={handleDelete}
-          />
-        ))}
+    <div>
+      <div className="mb-5">
+        <TodoInput handleAdd={handleAdd} />
+      </div>
+      <div className=" overflow-y-scroll max-h-[70vh] scroll-smooth no-scrollbar">
+        {todos &&
+          todos?.map((el) => (
+            <TodoList
+              key={el.id}
+              {...el}
+              handleStatus={handleStatus}
+              handleTitle={handleTitle}
+              handleDelete={handleDelete}
+            />
+          ))}
+      </div>
     </div>
   );
 };
