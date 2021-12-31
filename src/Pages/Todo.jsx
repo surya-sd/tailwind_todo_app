@@ -38,7 +38,6 @@ export const Todo = () => {
     if (localStorage.getItem("todos")) {
       setTodos(JSON.parse(localStorage.getItem("todos")));
     }
-    console.log(localStorage.getItem("todos"));
   }, []);
   return (
     <div>
